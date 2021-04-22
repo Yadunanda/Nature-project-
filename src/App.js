@@ -1,34 +1,24 @@
 import React, {Component} from 'react';
 import './App.css';
-import Header from './Components/Header/Header'
-import Footer from './Components/Footer/Footer'
-import Image from './Components/Image/Image'
-import Three from './Components/three/three'
-import Motivational from './Components/motivational/motivational'
+import {BrowserRouter,Switch, Link, Route} from 'react-router-dom'
+import About from './Components/Header/About/About';
+import Home from './Components/Home/Home'
 
-
-class App extends Component{
-
-
-
-render(){
-
+let App=()=>{
 
 
   return(
-    <div className='xyz'>
-    <Header/>
-        <Image/>
-          <Three/>
-        <Motivational/>
-              <Footer/>
-
-    </div>
+    <BrowserRouter>
+    <Switch>
+    <Route path="/" exact component={Home}/>  
+<Route path="/Aboutus" exact component={About}/>
+<Route path="/Contact Us" />
+<Route path="/Sponsors" />
+</Switch>
+    </BrowserRouter>
 
   )
 }
-}
-
 
 
 
